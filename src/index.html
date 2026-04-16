@@ -1,36 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset=utf-8/>
-<title>Lab 1. Introduction to HTML5 and HLS</title>
-  
-  <!--
-  Embed needed js libraries for video player. Note, libraries needs to be hosted on your server, under /js folder.
-   -->
-  <!--
-  Location for CSS if needed. Note, cascade style sheets needs to be hosted on your server, under /css folder.
-  -->
-   
-
-
+  <link href="https://vjs.zencdn.net/8.0.4/video-js.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>My first Test2.0jjjj HLS player</h1>
-  
-  <!--
-  location for your player window
-  -->
-  
-	<button type="button">Play_test</button>
-	<button type="button">Pause_test</button>
-	<button type="button">Stop_higga nigga test2</button>
-	<button type="button">Jump to 5 sec forward</button>
-	<button type="button">Jump to 5 sec backwards</button>	
-	
-	<p>Playlist</p>
-	
-	<input type="text" name="url1" size="100" value="https://d2zihajmogu5jn.cloudfront.net/bipbop-advanced/bipbop_16x9_variant.m3u8"><button type="button">Load</button><br>
-	<input type="text" name="url2" size="100" value="https://d2zihajmogu5jn.cloudfront.net/bipbop-advanced/bipbop_16x9_variant.m3u8"><button type="button">Load</button><br>
-	<button type="button">Shuffle</button>
+
+<video id="video" class="video-js" controls width="720" height="400">
+  <source src="https://d2zihajmogu5jn.cloudfront.net/bipbop-advanced/bipbop_16x9_variant.m3u8"
+          type="application/x-mpegURL">
+</video>
+
+<br><br>
+
+<button onclick="playVideo()">Play</button>
+<button onclick="pauseVideo()">Pause</button>
+<button onclick="stopVideo()">Stop</button>
+<button onclick="forward()">+5s</button>
+<button onclick="backward()">-5s</button>
+
+<script src="https://vjs.zencdn.net/8.0.4/video.min.js"></script>
+
+<script>
+  const player = videojs('video');
+</script>
+
 </body>
 </html>
